@@ -1,0 +1,6 @@
+framework module Pods_Fire {
+  umbrella header "Pods-Fire-umbrella.h"
+
+  export *
+  module * { export * }
+}
