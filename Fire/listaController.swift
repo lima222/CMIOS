@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 
-class listaController: UIViewController, UITableViewDataSource {
+class listaController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
     @IBOutlet weak var tableCadeiras: UITableView!
@@ -18,6 +18,7 @@ class listaController: UIViewController, UITableViewDataSource {
     var db: Firestore!
     var array = [String]()
     var array2 = [String]()
+    var idc = 0
     
     
     override func viewDidLoad() {
@@ -82,6 +83,26 @@ class listaController: UIViewController, UITableViewDataSource {
          */
     }
     
+    
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(array[indexPath.row])
+        self.idc = indexPath.row
+        self.performSegue(withIdentifier: "segueCadeiras", sender: tableView)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if(segue.identifier == "segueCadeiras") {
+            
+            let ltarefas = (segue.destination as! listaTarefas)
+            ltarefas.nomeCadeira = array[self.idc]
+            
+        }
+    }
+    
    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -92,6 +113,7 @@ class listaController: UIViewController, UITableViewDataSource {
         let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "zz")
         cell.textLabel?.text = array[indexPath.row]
         cell.detailTextLabel?.text = array2[indexPath.row]
+        cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
         return cell
     }
 }

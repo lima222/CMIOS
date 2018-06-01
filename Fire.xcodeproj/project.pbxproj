@@ -17,6 +17,7 @@
 		8863CCBC20B065E700151AD0 /* dashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8863CCBB20B065E700151AD0 /* dashController.swift */; };
 		88E819F420B0756B000C4E8A /* listaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E819F320B0756B000C4E8A /* listaController.swift */; };
 		88E819F620B07C01000C4E8A /* Cadeiras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E819F520B07C01000C4E8A /* Cadeiras.swift */; };
+		88F05B0D20C185DA008AA5DE /* listaTarefas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F05B0C20C185DA008AA5DE /* listaTarefas.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		8863CCBB20B065E700151AD0 /* dashController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dashController.swift; sourceTree = "<group>"; };
 		88E819F320B0756B000C4E8A /* listaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listaController.swift; sourceTree = "<group>"; };
 		88E819F520B07C01000C4E8A /* Cadeiras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cadeiras.swift; sourceTree = "<group>"; };
+		88F05B0C20C185DA008AA5DE /* listaTarefas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listaTarefas.swift; sourceTree = "<group>"; };
 		B946DAE7DE5D4F27434B1A38 /* Pods-Fire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fire.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fire/Pods-Fire.release.xcconfig"; sourceTree = "<group>"; };
 		E0E4214894898242FF92FD9B /* Pods_Fire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -106,6 +108,7 @@
 			children = (
 				88E819F320B0756B000C4E8A /* listaController.swift */,
 				88E819F520B07C01000C4E8A /* Cadeiras.swift */,
+				88F05B0C20C185DA008AA5DE /* listaTarefas.swift */,
 			);
 			name = Dashboard;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88F05B0D20C185DA008AA5DE /* listaTarefas.swift in Sources */,
 				8854FA6420B0542600C35646 /* ViewController.swift in Sources */,
 				88E819F420B0756B000C4E8A /* listaController.swift in Sources */,
 				88E819F620B07C01000C4E8A /* Cadeiras.swift in Sources */,
