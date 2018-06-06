@@ -16,8 +16,7 @@ class listaController: UIViewController, UITableViewDataSource, UITableViewDeleg
     @IBOutlet weak var tableCadeiras: UITableView!
     
     var db: Firestore!
-    var array = [String]()
-    var array2 = [String]()
+    var listaCadeiras = [CCadeiras]()
     var idc = 0
     
     
@@ -41,13 +40,18 @@ class listaController: UIViewController, UITableViewDataSource, UITableViewDeleg
                     /*let x = String(describing: document.data()["desc"])
                     self.array.append(x)*/
                     
+                    var cadeira = CCadeiras()
+                    
                     if let name = document.data()["nome"] as? String {
-                        self.array.append(name)
+                        cadeira.nome = name
+                        
                     }
                     
                     if let desc = document.data()["desc"] as? String {
-                        self.array2.append(desc)
+                        cadeira.desc = desc
                     }
+                    
+                    self.listaCadeiras.append(cadeira)
                 }
                 
                 self.tableCadeiras.reloadData()
@@ -87,7 +91,7 @@ class listaController: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(array[indexPath.row])
+        print(listaCadeiras[indexPath.row])
         self.idc = indexPath.row
         self.performSegue(withIdentifier: "segueCadeiras", sender: tableView)
     }
@@ -98,7 +102,7 @@ class listaController: UIViewController, UITableViewDataSource, UITableViewDeleg
         if(segue.identifier == "segueCadeiras") {
             
             let ltarefas = (segue.destination as! listaTarefas)
-            ltarefas.nomeCadeira = array[self.idc]
+            ltarefas.nomeCadeira = (listaCadeiras[self.idc].nome)!
             
         }
     }
@@ -106,13 +110,13 @@ class listaController: UIViewController, UITableViewDataSource, UITableViewDeleg
    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return array.count
+        return listaCadeiras.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "zz")
-        cell.textLabel?.text = array[indexPath.row]
-        cell.detailTextLabel?.text = array2[indexPath.row]
+        cell.textLabel?.text = listaCadeiras[indexPath.row].nome
+        cell.detailTextLabel?.text = listaCadeiras[indexPath.row].desc
         cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
         return cell
     }

@@ -13,6 +13,8 @@ import Kingfisher
 
 class dashController: UIViewController {
     
+    @IBOutlet weak var pontos: UILabel!
+    @IBOutlet weak var name: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,35 @@ class dashController: UIViewController {
         imageView.layer.borderWidth = 3.0
         let red = UIColor(red: 100.0/255.0, green: 130.0/255.0, blue: 230.0/255.0, alpha: 1.0)
         imageView.layer.borderColor = red.cgColor
+        self.name.text = user?.displayName as! String
+        
+        
+        
+        
+        // [START setup]
+        var db: Firestore!
+        let settings = FirestoreSettings()
+        
+        Firestore.firestore().settings = settings
+        // [END setup]
+        db = Firestore.firestore()
+        
+        print(user?.uid)
+        db.collection("utilizador").whereField("uid", isEqualTo: user?.uid).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    var valor = document.data()["pontos"] as! Int
+                    self.pontos.text = String(valor)
+                    
+                }
+            }
+        }
+
+        
+        
+       
     }
     
     

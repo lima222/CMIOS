@@ -15,6 +15,8 @@
 		8854FA6C20B0542600C35646 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8854FA6A20B0542600C35646 /* LaunchScreen.storyboard */; };
 		8854FA7420B0542D00C35646 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8854FA7320B0542D00C35646 /* GoogleService-Info.plist */; };
 		8863CCBC20B065E700151AD0 /* dashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8863CCBB20B065E700151AD0 /* dashController.swift */; };
+		8870816B20C80B9D00BDA2A7 /* CCadeiras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8870816A20C80B9D00BDA2A7 /* CCadeiras.swift */; };
+		8870816D20C80D0900BDA2A7 /* CTarefas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8870816C20C80D0900BDA2A7 /* CTarefas.swift */; };
 		88E819F420B0756B000C4E8A /* listaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E819F320B0756B000C4E8A /* listaController.swift */; };
 		88E819F620B07C01000C4E8A /* Cadeiras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E819F520B07C01000C4E8A /* Cadeiras.swift */; };
 		88F05B0D20C185DA008AA5DE /* listaTarefas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F05B0C20C185DA008AA5DE /* listaTarefas.swift */; };
@@ -32,6 +34,8 @@
 		8854FA6D20B0542600C35646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8854FA7320B0542D00C35646 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8863CCBB20B065E700151AD0 /* dashController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dashController.swift; sourceTree = "<group>"; };
+		8870816A20C80B9D00BDA2A7 /* CCadeiras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCadeiras.swift; sourceTree = "<group>"; };
+		8870816C20C80D0900BDA2A7 /* CTarefas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTarefas.swift; sourceTree = "<group>"; };
 		88E819F320B0756B000C4E8A /* listaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listaController.swift; sourceTree = "<group>"; };
 		88E819F520B07C01000C4E8A /* Cadeiras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cadeiras.swift; sourceTree = "<group>"; };
 		88F05B0C20C185DA008AA5DE /* listaTarefas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listaTarefas.swift; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				881D7E3920B068EF0064F733 /* Fire.entitlements */,
+				8870816920C80B6300BDA2A7 /* Models */,
+				8870816820C80AE700BDA2A7 /* New Group */,
 				8863CCB620B0633A00151AD0 /* Dashboard */,
 				8854FA6120B0542600C35646 /* AppDelegate.swift */,
 				8854FA6320B0542600C35646 /* ViewController.swift */,
@@ -111,6 +117,22 @@
 				88F05B0C20C185DA008AA5DE /* listaTarefas.swift */,
 			);
 			name = Dashboard;
+			sourceTree = "<group>";
+		};
+		8870816820C80AE700BDA2A7 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
+		8870816920C80B6300BDA2A7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8870816A20C80B9D00BDA2A7 /* CCadeiras.swift */,
+				8870816C20C80D0900BDA2A7 /* CTarefas.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +315,8 @@
 			files = (
 				88F05B0D20C185DA008AA5DE /* listaTarefas.swift in Sources */,
 				8854FA6420B0542600C35646 /* ViewController.swift in Sources */,
+				8870816D20C80D0900BDA2A7 /* CTarefas.swift in Sources */,
+				8870816B20C80B9D00BDA2A7 /* CCadeiras.swift in Sources */,
 				88E819F420B0756B000C4E8A /* listaController.swift in Sources */,
 				88E819F620B07C01000C4E8A /* Cadeiras.swift in Sources */,
 				8854FA6220B0542600C35646 /* AppDelegate.swift in Sources */,
