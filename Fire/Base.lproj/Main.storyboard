@@ -125,14 +125,6 @@
                                     <segue destination="eGf-Gh-rIM" kind="show" id="vlG-0C-doV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccI-Yo-P3U">
-                                <rect key="frame" x="205" y="454" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="sauHello:" destination="868-Ia-LLM" eventType="touchUpInside" id="yRt-IP-0a3"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7T-vo-M7j">
                                 <rect key="frame" x="166" y="303" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -146,6 +138,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccI-Yo-P3U">
+                                <rect key="frame" x="205" y="412" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="76E-q3-3qV" kind="show" id="vaw-2c-3AN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -165,6 +165,24 @@
             </objects>
             <point key="canvasLocation" x="1957.5999999999999" y="106.59670164917542"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Wrj-3K-bOW">
+            <objects>
+                <viewController id="76E-q3-3qV" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3X9-x8-MQk"/>
+                        <viewControllerLayoutGuide type="bottom" id="eLL-sb-zqd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="djz-8H-Ge9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N8Y-83-mwH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1958" y="860"/>
+        </scene>
         <!--Lista Controller-->
         <scene sceneID="Yni-7E-bao">
             <objects>
@@ -177,8 +195,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yk5-73-UIT">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yk5-73-UIT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <sections/>
                                 <connections>
@@ -188,12 +207,6 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="oUh-fD-GBS" firstAttribute="top" secondItem="yk5-73-UIT" secondAttribute="bottom" id="2O4-Wa-TNT"/>
-                            <constraint firstItem="yk5-73-UIT" firstAttribute="leading" secondItem="XkK-0A-9he" secondAttribute="leading" id="X4Y-8c-gGp"/>
-                            <constraint firstItem="yk5-73-UIT" firstAttribute="top" secondItem="hOo-5x-spL" secondAttribute="bottom" id="dSf-VP-lc4"/>
-                            <constraint firstAttribute="trailing" secondItem="yk5-73-UIT" secondAttribute="trailing" id="ev3-3M-XQf"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="tableCadeiras" destination="yk5-73-UIT" id="8xZ-us-0Iy"/>
@@ -202,7 +215,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IPg-oV-tXS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3056.8000000000002" y="63.418290854572717"/>
+            <point key="canvasLocation" x="3049" y="107"/>
         </scene>
         <!--Lista Tarefas-->
         <scene sceneID="2xj-jh-VfZ">
@@ -223,21 +236,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QVX-NC-aIW">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QVX-NC-aIW">
+                                <rect key="frame" x="0.0" y="64" width="375" height="553"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="xNt-5W-gYV" id="cTd-ST-2TJ"/>
                                     <outlet property="delegate" destination="xNt-5W-gYV" id="1g9-VR-wye"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Tk-fy-xqY">
+                                <rect key="frame" x="258" y="629" width="111" height="30"/>
+                                <state key="normal" title="Adicionar Tarefa"/>
+                                <connections>
+                                    <segue destination="60P-eG-BVj" kind="show" identifier="segueAddTarefa" id="eQV-U0-GSC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="QVX-NC-aIW" secondAttribute="trailing" id="Jfi-It-pr3"/>
-                            <constraint firstItem="hPX-IW-CSO" firstAttribute="top" secondItem="QVX-NC-aIW" secondAttribute="bottom" id="KgZ-fp-xWR"/>
-                            <constraint firstItem="QVX-NC-aIW" firstAttribute="leading" secondItem="Mh4-Zp-CRE" secondAttribute="leading" id="fYE-2M-qd4"/>
-                            <constraint firstItem="QVX-NC-aIW" firstAttribute="top" secondItem="sOH-aW-gaf" secondAttribute="bottom" id="jVB-oA-Xog"/>
+                            <constraint firstItem="hPX-IW-CSO" firstAttribute="top" secondItem="8Tk-fy-xqY" secondAttribute="bottom" constant="8" id="3JE-y5-See"/>
+                            <constraint firstItem="8Tk-fy-xqY" firstAttribute="trailing" secondItem="Mh4-Zp-CRE" secondAttribute="trailingMargin" constant="10" id="bis-aP-LIf"/>
                         </constraints>
                     </view>
                     <connections>
@@ -246,7 +265,69 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RGc-Mo-rJf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4021.5999999999999" y="41.829085457271368"/>
+            <point key="canvasLocation" x="4017" y="107"/>
+        </scene>
+        <!--Adicionar Tarefa-->
+        <scene sceneID="73g-xr-JMb">
+            <objects>
+                <viewController id="60P-eG-BVj" customClass="inserirTarefa" customModule="Fire" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7AF-RJ-8dA"/>
+                        <viewControllerLayoutGuide type="bottom" id="jQF-ox-lpr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tcn-kO-MEH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome da Tarefa:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5h-pO-5yr">
+                                <rect key="frame" x="47" y="195" width="126" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Descriçao da Tarefa:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lS-eE-4qy">
+                                <rect key="frame" x="47" y="284" width="158" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KkP-vJ-tn2">
+                                <rect key="frame" x="47" y="224" width="296" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CMF-pJ-cMU">
+                                <rect key="frame" x="47" y="318" width="285" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1t-ZR-fB3">
+                                <rect key="frame" x="270" y="393" width="65" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Adicionar"/>
+                                <connections>
+                                    <action selector="addTask:" destination="60P-eG-BVj" eventType="touchUpInside" id="m33-qV-RBS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Adicionar Tarefa" id="Ewb-he-Hzi"/>
+                    <connections>
+                        <outlet property="addTarefa" destination="W1t-ZR-fB3" id="6La-RE-v6M"/>
+                        <outlet property="descTask" destination="CMF-pJ-cMU" id="gM8-tv-7Q5"/>
+                        <outlet property="nameTask" destination="KkP-vJ-tn2" id="5iW-OL-XUq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z2H-Bx-ToB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4904.8000000000002" y="106.59670164917542"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="img-up-5rC">

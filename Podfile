@@ -18,5 +18,6 @@ pod 'FirebaseUI/Phone'
   pod 'Firebase/Storage'
 pod 'GoogleSignIn'
 pod 'Kingfisher', '~> 3.0'
+pod 'CVCalendar', '~> 1.6.1'
 
 end

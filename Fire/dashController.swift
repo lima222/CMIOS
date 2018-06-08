@@ -52,11 +52,32 @@ class dashController: UIViewController {
                 }
             }
         }
-
-        
-        
-       
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let user = Auth.auth().currentUser
+        
+        var db: Firestore!
+        let settings = FirestoreSettings()
+        
+        Firestore.firestore().settings = settings
+        // [END setup]
+        db = Firestore.firestore()
+        
+        db.collection("utilizador").whereField("uid", isEqualTo: user?.uid).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    var valor = document.data()["pontos"] as! Int
+                    self.pontos.text = String(valor)
+                    
+                }
+            }
+        }
+    }
+    
+   
     
     
     

@@ -98,12 +98,9 @@ class listaController: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if(segue.identifier == "segueCadeiras") {
-            
             let ltarefas = (segue.destination as! listaTarefas)
             ltarefas.nomeCadeira = (listaCadeiras[self.idc].nome)!
-            
         }
     }
     

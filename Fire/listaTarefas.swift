@@ -27,55 +27,11 @@ class listaTarefas: UIViewController, UITableViewDataSource, UITableViewDelegate
         super.viewDidLoad()
         print("nomr " + nomeCadeira)
         
-      
-        // [START setup]
         let settings = FirestoreSettings()
-        
         Firestore.firestore().settings = settings
-        // [END setup]
         db = Firestore.firestore()
         
-        db.collection("tarefas").whereField("cadeira", isEqualTo: nomeCadeira).getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    
-                    var tarefa = CTarefas()
-                    tarefa.idT = document.documentID
-                    
-                    if let name = document.data()["nome"] as? String {
-                        self.arrayB.append(false)
-                        tarefa.nome = name
-                    }
-                    if let desc = document.data()["desc"] as? String {
-                        tarefa.desc = desc
-                    }
-                    
-                    if let pontos = document.data()["pontos"] as? Int {
-                        tarefa.pontos = pontos
-                    }
-                    
-                    
-                    
-                    self.l_tarefas.append(tarefa)
-                }
-                self.listaCadeiras.reloadData()
-            }
-        }
         
-        
-        self.db.collection("utilizador").whereField("uid", isEqualTo: user?.uid).getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    self.docId = document.documentID
-                    self.pontos = document.data()["pontos"] as! Int
-                }
-            }
-        }
-
     }
     
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
@@ -93,7 +49,7 @@ class listaTarefas: UIViewController, UITableViewDataSource, UITableViewDelegate
                 self.l_tarefas[indexPath.row].show = false
                 
                 self.db.collection("utilizador").document(self.docId!).updateData([
-                    "pontos": self.pontos! + 2
+                    "pontos": self.pontos! + self.l_tarefas[indexPath.row].pontos!
                     ])
                 
                 
@@ -108,6 +64,7 @@ class listaTarefas: UIViewController, UITableViewDataSource, UITableViewDelegate
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print( l_tarefas.count)
         return l_tarefas.count
     }
     
@@ -135,5 +92,84 @@ class listaTarefas: UIViewController, UITableViewDataSource, UITableViewDelegate
         cell.textLabel?.text = l_tarefas[indexPath.row].nome
         cell.accessoryType = UITableViewCellAccessoryType.detailButton
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "segueAddTarefa") {
+            let ltarefas = (segue.destination as! inserirTarefa)
+            ltarefas.nomeCadeira = self.nomeCadeira
+        }
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        self.l_tarefas = [CTarefas]()
+        self.listaCadeiras.reloadData()
+        db.collection("tarefas").whereField("cadeira", isEqualTo: nomeCadeira)
+            .whereField("global", isEqualTo: true).getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        var tarefa = CTarefas()
+                        tarefa.idT = document.documentID
+                        
+                        if let name = document.data()["nome"] as? String {
+                            self.arrayB.append(false)
+                            tarefa.nome = name
+                        }
+                        if let desc = document.data()["desc"] as? String {
+                            tarefa.desc = desc
+                        }
+                        
+                        if let pontos = document.data()["pontos"] as? Int {
+                            tarefa.pontos = pontos
+                        }
+                        self.l_tarefas.append(tarefa)
+                    }
+                    self.listaCadeiras.reloadData()
+                }
+        }
+        
+        
+        db.collection("tarefas").whereField("cadeira", isEqualTo: nomeCadeira)
+            .whereField("global", isEqualTo: false)
+            .whereField("uid", isEqualTo: user?.uid).getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        var tarefa = CTarefas()
+                        tarefa.idT = document.documentID
+                        
+                        if let name = document.data()["nome"] as? String {
+                            self.arrayB.append(false)
+                            tarefa.nome = name
+                        }
+                        if let desc = document.data()["desc"] as? String {
+                            tarefa.desc = desc
+                        }
+                        
+                        if let pontos = document.data()["pontos"] as? Int {
+                            tarefa.pontos = pontos
+                        }
+                        self.l_tarefas.append(tarefa)
+                    }
+                    self.listaCadeiras.reloadData()
+                }
+        }
+        
+        
+        self.db.collection("utilizador").whereField("uid", isEqualTo: user?.uid).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    self.docId = document.documentID
+                    self.pontos = document.data()["pontos"] as! Int
+                }
+            }
+        }
     }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A6A4183D93B5D4BCDA27A17 /* Pods_Fire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E4214894898242FF92FD9B /* Pods_Fire.framework */; };
+		8852A4B320CAB77100F08035 /* inserirTarefa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8852A4B220CAB77100F08035 /* inserirTarefa.swift */; };
 		8854FA6220B0542600C35646 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8854FA6120B0542600C35646 /* AppDelegate.swift */; };
 		8854FA6420B0542600C35646 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8854FA6320B0542600C35646 /* ViewController.swift */; };
 		8854FA6720B0542600C35646 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8854FA6520B0542600C35646 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		33028383E53B7A0C8B7E2808 /* Pods-Fire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fire/Pods-Fire.debug.xcconfig"; sourceTree = "<group>"; };
 		881D7E3920B068EF0064F733 /* Fire.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fire.entitlements; sourceTree = "<group>"; };
+		8852A4B220CAB77100F08035 /* inserirTarefa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = inserirTarefa.swift; sourceTree = "<group>"; };
 		8854FA5E20B0542600C35646 /* Fire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8854FA6120B0542600C35646 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8854FA6320B0542600C35646 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				88E819F320B0756B000C4E8A /* listaController.swift */,
 				88E819F520B07C01000C4E8A /* Cadeiras.swift */,
 				88F05B0C20C185DA008AA5DE /* listaTarefas.swift */,
+				8852A4B220CAB77100F08035 /* inserirTarefa.swift */,
 			);
 			name = Dashboard;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				8870816B20C80B9D00BDA2A7 /* CCadeiras.swift in Sources */,
 				88E819F420B0756B000C4E8A /* listaController.swift in Sources */,
 				88E819F620B07C01000C4E8A /* Cadeiras.swift in Sources */,
+				8852A4B320CAB77100F08035 /* inserirTarefa.swift in Sources */,
 				8854FA6220B0542600C35646 /* AppDelegate.swift in Sources */,
 				8863CCBC20B065E700151AD0 /* dashController.swift in Sources */,
 			);
