@@ -15,6 +15,7 @@ class gameController: UIViewController {
     var db: Firestore!
     var docID: String!
     var criou: Bool!
+    let user = Auth.auth().currentUser
 
     @IBOutlet weak var criarBTN: UIButton!
     @IBOutlet weak var jogarBTN: UIButton!
@@ -57,14 +58,18 @@ class gameController: UIViewController {
             "etapa": 0,
             "p1": 0,
             "p2": 0,
-            "uid1": "",
+            "uid1": user?.uid,
             "uid2": "",
             "started": false,
             ]) { err in
                 if let err = err {
                     print("error")
                 } else {
-                    print(ref!.documentID)
+                    self.docID = ref!.documentID
+                    self.criou = true
+                    self.criarBTN.isHidden = true
+                    self.jogarBTN.isHidden = false
+                    
                 }
         
         
@@ -77,13 +82,19 @@ class gameController: UIViewController {
         if(segue.identifier == "segueJogar") {
             let game = (segue.destination as! realGame)
             game.docID = self.docID
-            game.player = 2
+            
+            if(criou) {
+                game.player = 1
+            } else {
+                game.player = 2
+            }
+            
         }
         
         
         
         if(segue.identifier == "segueJogarCriar") {
-            print("idiasd")
+    
             let game = (segue.destination as! realGame)
             game.docID = self.docID
             game.player = 1

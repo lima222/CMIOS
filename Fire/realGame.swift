@@ -17,8 +17,10 @@ class realGame: UIViewController {
     var player: Int!
     var etapa: Int!
     var opcao: Int!
+    let user = Auth.auth().currentUser
+    var mypontos: Int = 0
     
-    
+    @IBOutlet weak var teuspontos: UILabel!
     @IBOutlet weak var pontos: UILabel!
     @IBOutlet weak var pergunta: UILabel!
     @IBOutlet weak var r1: UIButton!
@@ -41,7 +43,8 @@ class realGame: UIViewController {
         if(player == 2 ) {
             self.db.collection("embateReal").document(self.docID!).updateData([
                 "started": true,
-                "etapa": 1
+                "etapa": 1,
+                "uid2": user?.uid
                 ])
             
             startGame()
@@ -133,7 +136,7 @@ class realGame: UIViewController {
     }
     
     func blockBTNS() {
-        
+        self.teuspontos.text = "Tu: " + String(self.mypontos);
         self.r1.setTitleColor(UIColor.black, for: .normal)
         self.r2.setTitleColor(UIColor.black, for: .normal)
         self.r3.setTitleColor(UIColor.black, for: .normal)
@@ -150,6 +153,8 @@ class realGame: UIViewController {
         
         if(self.opcao == 1) {
             self.r1.backgroundColor = UIColor.green
+            mypontos = mypontos + 5
+            
         } else {
             self.r1.backgroundColor = UIColor.red
         }
@@ -166,6 +171,7 @@ class realGame: UIViewController {
         
         if(self.opcao == 2) {
             self.r2.backgroundColor = UIColor.green
+            mypontos = mypontos + 5
         } else {
             self.r2.backgroundColor = UIColor.red
         }
@@ -177,6 +183,7 @@ class realGame: UIViewController {
         
         if(self.opcao == 3) {
             self.r3.backgroundColor = UIColor.green
+            mypontos = mypontos + 5
         } else {
             self.r3.backgroundColor = UIColor.red
         }
@@ -190,6 +197,7 @@ class realGame: UIViewController {
         
         if(self.opcao == 4) {
             self.r4.backgroundColor = UIColor.green
+            mypontos = mypontos + 5
         } else {
             self.r4.backgroundColor = UIColor.red
         }

@@ -246,6 +246,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Iu-wv-EZs">
+                                <rect key="frame" x="204" y="636" width="145" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -253,6 +259,8 @@
                             <constraint firstItem="3ok-o1-I7m" firstAttribute="top" secondItem="DIW-gT-yC5" secondAttribute="bottom" constant="10" id="9Br-FN-oVz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3ok-o1-I7m" secondAttribute="trailing" constant="10" id="Dsr-eK-wyF"/>
                             <constraint firstItem="3ok-o1-I7m" firstAttribute="leading" secondItem="156-10-pq0" secondAttribute="leadingMargin" constant="10" id="HZJ-cI-ETq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4Iu-wv-EZs" secondAttribute="trailing" constant="10" id="q7I-jo-Vrz"/>
+                            <constraint firstItem="Rlg-g1-g8e" firstAttribute="top" secondItem="4Iu-wv-EZs" secondAttribute="bottom" constant="10" id="qTL-Mp-zze"/>
                         </constraints>
                     </view>
                     <connections>
@@ -262,6 +270,7 @@
                         <outlet property="r2" destination="6FU-ba-Cr5" id="2qk-G7-UF2"/>
                         <outlet property="r3" destination="SRR-gq-VpH" id="ZZi-gV-z7u"/>
                         <outlet property="r4" destination="kS3-Yc-bAi" id="Sd7-JS-oBc"/>
+                        <outlet property="teuspontos" destination="4Iu-wv-EZs" id="wRC-aY-BrW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ppP-cS-eog" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -286,7 +295,6 @@
                                 <state key="normal" title="Criar"/>
                                 <connections>
                                     <action selector="criarMesa:" destination="DUv-Rf-HKa" eventType="touchUpInside" id="rcb-xO-hLQ"/>
-                                    <segue destination="w77-km-eFP" kind="show" identifier="segueJogarCriar" id="4h2-op-ihx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nx5-Jf-v2n">
@@ -492,7 +500,4 @@
             <point key="canvasLocation" x="117.59999999999999" y="106.59670164917542"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="4h2-op-ihx"/>
-    </inferredMetricsTieBreakers>
 </document>
