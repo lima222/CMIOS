@@ -103,7 +103,6 @@ class listaController: UIViewController, UITableViewDataSource, UITableViewDeleg
             ltarefas.nomeCadeira = (listaCadeiras[self.idc].nome)!
         }
     }
-    
    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

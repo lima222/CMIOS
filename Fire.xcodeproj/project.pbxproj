@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2A6A4183D93B5D4BCDA27A17 /* Pods_Fire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E4214894898242FF92FD9B /* Pods_Fire.framework */; };
+		8848C09E20D14D880056B667 /* gameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8848C09D20D14D880056B667 /* gameController.swift */; };
+		8848C0A020D1513D0056B667 /* CEmbateReal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8848C09F20D1513D0056B667 /* CEmbateReal.swift */; };
+		8848C0A220D1589B0056B667 /* realGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8848C0A120D1589B0056B667 /* realGame.swift */; };
+		8848C0A520D175C80056B667 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8848C0A320D175C80056B667 /* Main.storyboard */; };
 		8852A4B320CAB77100F08035 /* inserirTarefa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8852A4B220CAB77100F08035 /* inserirTarefa.swift */; };
 		8854FA6220B0542600C35646 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8854FA6120B0542600C35646 /* AppDelegate.swift */; };
 		8854FA6420B0542600C35646 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8854FA6320B0542600C35646 /* ViewController.swift */; };
-		8854FA6720B0542600C35646 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8854FA6520B0542600C35646 /* Main.storyboard */; };
 		8854FA6920B0542600C35646 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8854FA6820B0542600C35646 /* Assets.xcassets */; };
 		8854FA6C20B0542600C35646 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8854FA6A20B0542600C35646 /* LaunchScreen.storyboard */; };
 		8854FA7420B0542D00C35646 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8854FA7320B0542D00C35646 /* GoogleService-Info.plist */; };
@@ -26,11 +29,14 @@
 /* Begin PBXFileReference section */
 		33028383E53B7A0C8B7E2808 /* Pods-Fire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fire/Pods-Fire.debug.xcconfig"; sourceTree = "<group>"; };
 		881D7E3920B068EF0064F733 /* Fire.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fire.entitlements; sourceTree = "<group>"; };
+		8848C09D20D14D880056B667 /* gameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gameController.swift; sourceTree = "<group>"; };
+		8848C09F20D1513D0056B667 /* CEmbateReal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CEmbateReal.swift; sourceTree = "<group>"; };
+		8848C0A120D1589B0056B667 /* realGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = realGame.swift; sourceTree = "<group>"; };
+		8848C0A420D175C80056B667 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8852A4B220CAB77100F08035 /* inserirTarefa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = inserirTarefa.swift; sourceTree = "<group>"; };
 		8854FA5E20B0542600C35646 /* Fire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8854FA6120B0542600C35646 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8854FA6320B0542600C35646 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8854FA6620B0542600C35646 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8854FA6820B0542600C35646 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8854FA6B20B0542600C35646 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8854FA6D20B0542600C35646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -101,10 +107,10 @@
 				8863CCB620B0633A00151AD0 /* Dashboard */,
 				8854FA6120B0542600C35646 /* AppDelegate.swift */,
 				8854FA6320B0542600C35646 /* ViewController.swift */,
-				8854FA6520B0542600C35646 /* Main.storyboard */,
 				8863CCBB20B065E700151AD0 /* dashController.swift */,
 				8854FA6820B0542600C35646 /* Assets.xcassets */,
 				8854FA6A20B0542600C35646 /* LaunchScreen.storyboard */,
+				8848C0A320D175C80056B667 /* Main.storyboard */,
 				8854FA6D20B0542600C35646 /* Info.plist */,
 				8854FA7320B0542D00C35646 /* GoogleService-Info.plist */,
 			);
@@ -118,6 +124,8 @@
 				88E819F520B07C01000C4E8A /* Cadeiras.swift */,
 				88F05B0C20C185DA008AA5DE /* listaTarefas.swift */,
 				8852A4B220CAB77100F08035 /* inserirTarefa.swift */,
+				8848C09D20D14D880056B667 /* gameController.swift */,
+				8848C0A120D1589B0056B667 /* realGame.swift */,
 			);
 			name = Dashboard;
 			sourceTree = "<group>";
@@ -134,6 +142,7 @@
 			children = (
 				8870816A20C80B9D00BDA2A7 /* CCadeiras.swift */,
 				8870816C20C80D0900BDA2A7 /* CTarefas.swift */,
+				8848C09F20D1513D0056B667 /* CEmbateReal.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -210,7 +219,7 @@
 				8854FA6C20B0542600C35646 /* LaunchScreen.storyboard in Resources */,
 				8854FA7420B0542D00C35646 /* GoogleService-Info.plist in Resources */,
 				8854FA6920B0542600C35646 /* Assets.xcassets in Resources */,
-				8854FA6720B0542600C35646 /* Main.storyboard in Resources */,
+				8848C0A520D175C80056B667 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,10 +326,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				88F05B0D20C185DA008AA5DE /* listaTarefas.swift in Sources */,
+				8848C09E20D14D880056B667 /* gameController.swift in Sources */,
 				8854FA6420B0542600C35646 /* ViewController.swift in Sources */,
 				8870816D20C80D0900BDA2A7 /* CTarefas.swift in Sources */,
 				8870816B20C80B9D00BDA2A7 /* CCadeiras.swift in Sources */,
+				8848C0A020D1513D0056B667 /* CEmbateReal.swift in Sources */,
 				88E819F420B0756B000C4E8A /* listaController.swift in Sources */,
+				8848C0A220D1589B0056B667 /* realGame.swift in Sources */,
 				88E819F620B07C01000C4E8A /* Cadeiras.swift in Sources */,
 				8852A4B320CAB77100F08035 /* inserirTarefa.swift in Sources */,
 				8854FA6220B0542600C35646 /* AppDelegate.swift in Sources */,
@@ -331,10 +343,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		8854FA6520B0542600C35646 /* Main.storyboard */ = {
+		8848C0A320D175C80056B667 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8854FA6620B0542600C35646 /* Base */,
+				8848C0A420D175C80056B667 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
