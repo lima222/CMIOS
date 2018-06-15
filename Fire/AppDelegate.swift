@@ -51,7 +51,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 // ...
                 return
             }
-            print("logado")
+            
+         
         }
     }
     

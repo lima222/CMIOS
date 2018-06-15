@@ -35,6 +35,7 @@ class dashController: UIViewController {
         // [START setup]
         var db: Firestore!
         let settings = FirestoreSettings()
+        settings.isPersistenceEnabled = true
         
         Firestore.firestore().settings = settings
         // [END setup]
@@ -79,6 +80,16 @@ class dashController: UIViewController {
     
    
     
+    @IBAction func logout(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            exit(0)
+            
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+    }
     
     
     @IBAction func sauHello(_ sender: Any) {

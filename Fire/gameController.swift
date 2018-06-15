@@ -16,7 +16,11 @@ class gameController: UIViewController {
     var docID: String!
     var criou: Bool!
     let user = Auth.auth().currentUser
-
+    var meuspontos: Int = 10000
+    @IBOutlet weak var points: UILabel!
+    @IBOutlet weak var opponent: UILabel!
+    @IBOutlet weak var roomName: UILabel!
+    @IBOutlet weak var insertRoom: UITextField!
     @IBOutlet weak var criarBTN: UIButton!
     @IBOutlet weak var jogarBTN: UIButton!
     
@@ -33,6 +37,8 @@ class gameController: UIViewController {
         
         jogarBTN.isHidden = true
         criarBTN.isHidden = true
+        insertRoom.isHidden = true
+        roomName.isHidden = true
         
         
         db.collection("embateReal").whereField("started", isEqualTo: false).getDocuments() { (querySnapshot, err) in
@@ -41,13 +47,50 @@ class gameController: UIViewController {
                 } else {
                     if(querySnapshot!.documents.count > 0) {
                         self.docID = querySnapshot!.documents[0].documentID
-                        self.jogarBTN.isHidden = false
+                        
+                        if(self.meuspontos != 10000 && self.meuspontos > 5) {
+                            self.jogarBTN.isHidden = false
+                        }
+                        
+                        self.roomName.text = "Room: " + (querySnapshot!.documents[0].data()["name"] as! String)
+                        self.roomName.isHidden = false
+                        var uid = (querySnapshot!.documents[0].data()["uid1"] as! String)
+                        print(uid)
+                        
+                        self.db.collection("utilizador").whereField("uid", isEqualTo: uid).getDocuments() { (querySnapshot, err) in
+                            if let err = err {
+                                print("Error getting documents: \(err)")
+                            } else {
+                                self.opponent.text = querySnapshot!.documents[0].data()["nome"] as! String
+                            }
+                        }
+                                
                     } else {
                         self.criarBTN.isHidden = false
-  
+                        self.insertRoom.isHidden = false
                     }
                     
                 }
+        }
+        
+        
+        
+        
+        self.db.collection("utilizador").whereField("uid", isEqualTo: self.user?.uid).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                if(querySnapshot!.documents.count > 0) {
+                    self.meuspontos = querySnapshot!.documents[0].data()["pontos"] as! Int
+                    if(self.meuspontos < 5) {
+                        self.points.isHidden = false
+                        self.jogarBTN.isHidden = true
+                    }else {
+                        self.jogarBTN.isHidden = false
+                    }
+                }
+            }
+            
         }
     }
     
@@ -59,6 +102,7 @@ class gameController: UIViewController {
             "p1": 0,
             "p2": 0,
             "uid1": user?.uid,
+            "name": self.insertRoom.text!,
             "uid2": "",
             "started": false,
             ]) { err in
@@ -69,6 +113,9 @@ class gameController: UIViewController {
                     self.criou = true
                     self.criarBTN.isHidden = true
                     self.jogarBTN.isHidden = false
+                    self.insertRoom.isHidden = true
+                    self.roomName.text = "Room: " + self.insertRoom.text!
+                    self.roomName.isHidden = false
                     
                 }
         
