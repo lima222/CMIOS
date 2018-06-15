@@ -17,6 +17,10 @@ class gameController: UIViewController {
     var criou: Bool!
     let user = Auth.auth().currentUser
     var meuspontos: Int = 10000
+    
+    var criou2: Bool!
+    
+    
     @IBOutlet weak var points: UILabel!
     @IBOutlet weak var opponent: UILabel!
     @IBOutlet weak var roomName: UILabel!
@@ -30,6 +34,7 @@ class gameController: UIViewController {
         super.viewDidLoad()
         
         criou = false
+        criou2 = false
         
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
@@ -64,10 +69,29 @@ class gameController: UIViewController {
                                 self.opponent.text = querySnapshot!.documents[0].data()["nome"] as! String
                             }
                         }
+                        
+                        self.db.collection("utilizador").whereField("uid", isEqualTo: self.user?.uid).getDocuments() { (querySnapshot, err) in
+                            if let err = err {
+                                print("Error getting documents: \(err)")
+                            } else {
+                                if(querySnapshot!.documents.count > 0) {
+                                    self.meuspontos = querySnapshot!.documents[0].data()["pontos"] as! Int
+                                    if(self.meuspontos < 5 ) {
+                                        self.points.isHidden = false
+                                        self.jogarBTN.isHidden = true
+                                    }else  {
+                                        self.jogarBTN.isHidden = false
+                                    }
+                                }
+                            }
+                            
+                        }
                                 
                     } else {
+                        print("dsadsa")
                         self.criarBTN.isHidden = false
                         self.insertRoom.isHidden = false
+                        self.criou2 = true
                     }
                     
                 }
@@ -76,22 +100,7 @@ class gameController: UIViewController {
         
         
         
-        self.db.collection("utilizador").whereField("uid", isEqualTo: self.user?.uid).getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                if(querySnapshot!.documents.count > 0) {
-                    self.meuspontos = querySnapshot!.documents[0].data()["pontos"] as! Int
-                    if(self.meuspontos < 5) {
-                        self.points.isHidden = false
-                        self.jogarBTN.isHidden = true
-                    }else {
-                        self.jogarBTN.isHidden = false
-                    }
-                }
-            }
-            
-        }
+        
     }
     
     @IBAction func criarMesa(_ sender: Any) {

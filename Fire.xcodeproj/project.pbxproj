@@ -23,6 +23,8 @@
 		8870816D20C80D0900BDA2A7 /* CTarefas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8870816C20C80D0900BDA2A7 /* CTarefas.swift */; };
 		88733BDD20D4010C00AF8FA7 /* CRecompensas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88733BDC20D4010C00AF8FA7 /* CRecompensas.swift */; };
 		88733BDF20D4022000AF8FA7 /* recom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88733BDE20D4022000AF8FA7 /* recom.swift */; };
+		88733BE320D40B3900AF8FA7 /* calController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88733BE220D40B3900AF8FA7 /* calController.swift */; };
+		88733BE520D4119700AF8FA7 /* calendarList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88733BE420D4119700AF8FA7 /* calendarList.swift */; };
 		88E819F420B0756B000C4E8A /* listaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E819F320B0756B000C4E8A /* listaController.swift */; };
 		88E819F620B07C01000C4E8A /* Cadeiras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E819F520B07C01000C4E8A /* Cadeiras.swift */; };
 		88F05B0D20C185DA008AA5DE /* listaTarefas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F05B0C20C185DA008AA5DE /* listaTarefas.swift */; };
@@ -48,6 +50,8 @@
 		8870816C20C80D0900BDA2A7 /* CTarefas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTarefas.swift; sourceTree = "<group>"; };
 		88733BDC20D4010C00AF8FA7 /* CRecompensas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRecompensas.swift; sourceTree = "<group>"; };
 		88733BDE20D4022000AF8FA7 /* recom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = recom.swift; sourceTree = "<group>"; };
+		88733BE220D40B3900AF8FA7 /* calController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = calController.swift; sourceTree = "<group>"; };
+		88733BE420D4119700AF8FA7 /* calendarList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = calendarList.swift; sourceTree = "<group>"; };
 		88E819F320B0756B000C4E8A /* listaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listaController.swift; sourceTree = "<group>"; };
 		88E819F520B07C01000C4E8A /* Cadeiras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cadeiras.swift; sourceTree = "<group>"; };
 		88F05B0C20C185DA008AA5DE /* listaTarefas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listaTarefas.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 				8848C09D20D14D880056B667 /* gameController.swift */,
 				8848C0A120D1589B0056B667 /* realGame.swift */,
 				88733BDE20D4022000AF8FA7 /* recom.swift */,
+				88733BE220D40B3900AF8FA7 /* calController.swift */,
+				88733BE420D4119700AF8FA7 /* calendarList.swift */,
 			);
 			name = Dashboard;
 			sourceTree = "<group>";
@@ -334,8 +340,10 @@
 				88F05B0D20C185DA008AA5DE /* listaTarefas.swift in Sources */,
 				8848C09E20D14D880056B667 /* gameController.swift in Sources */,
 				8854FA6420B0542600C35646 /* ViewController.swift in Sources */,
+				88733BE520D4119700AF8FA7 /* calendarList.swift in Sources */,
 				8870816D20C80D0900BDA2A7 /* CTarefas.swift in Sources */,
 				88733BDD20D4010C00AF8FA7 /* CRecompensas.swift in Sources */,
+				88733BE320D40B3900AF8FA7 /* calController.swift in Sources */,
 				8870816B20C80B9D00BDA2A7 /* CCadeiras.swift in Sources */,
 				8848C0A020D1513D0056B667 /* CEmbateReal.swift in Sources */,
 				88E819F420B0756B000C4E8A /* listaController.swift in Sources */,

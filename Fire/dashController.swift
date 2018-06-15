@@ -13,6 +13,7 @@ import Kingfisher
 
 class dashController: UIViewController {
     
+    @IBOutlet weak var info: UILabel!
     @IBOutlet weak var pontos: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var imageView: UIImageView!
@@ -50,6 +51,17 @@ class dashController: UIViewController {
                     var valor = document.data()["pontos"] as! Int
                     self.pontos.text = String(valor)
                     
+                }
+            }
+        }
+        
+        db.collection("usertarefas").whereField("uid", isEqualTo: user?.uid).limit(to: 3).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                print("pça")
+                for document in querySnapshot!.documents {
+                    self.info.text = document.data()["desc"] as! String
                 }
             }
         }
